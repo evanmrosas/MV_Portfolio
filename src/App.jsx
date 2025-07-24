@@ -6,6 +6,11 @@ import ProjectDetail from './pages/ProjectDetail';
 import Navbar from './components/Navbar';
 import { Container } from '@mui/material';
 import BottomAppBar from './components/Bottombar';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 
 export default function App() {
   return (
