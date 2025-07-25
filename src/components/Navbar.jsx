@@ -42,18 +42,34 @@ return (
     <Toolbar disableGutters>
 
         {/* Avatar that links to home */}
-        <Box sx={{ flexGrow: 0, mr: 2 }}>
-        <Tooltip title="Go to Home">
-            <Link to="/" style={{ display: 'inline-block' }}>
-            <Avatar
-                alt="Portfolio Avatar"
-                src="src/images/headshot.JPG"
-                sx={{ cursor: 'pointer', width: 56, height: 56 }}
-            />
-            </Link>
-        </Tooltip>
-        </Box>
-
+        <Link to="/" style={{ display: 'inline-block', textDecoration: 'none', color: 'inherit' }}>
+            <Box sx={{ flexGrow: 0, mr: 2, display: { xs: 'none', md: 'flex', alignItems: 'center'} }}>
+            <Tooltip title="Go to Home">
+                <Avatar
+                    alt="Portfolio Avatar"
+                    src="src/images/headshot.JPG"
+                    sx={{ cursor: 'pointer', width: 56, height: 56 }}
+                />
+            </Tooltip>
+            <Box>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="div"
+                    sx={{
+                        flexGrow: 1,
+                        display: { xs: 'none', md: 'flex' },
+                        fontWeight: 700,
+                        color: '#000',
+                        textDecoration: 'none',
+                        ml: 2
+                    }}
+                >
+                    Evan Rosas
+                </Typography>
+            </Box>
+            </Box>
+        </Link>
         {/* Menu icon for mobile view */}
         <Box
         sx={{
