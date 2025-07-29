@@ -1,10 +1,10 @@
 import { Typography, Box, Grid, Paper, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import inventoryImg from '../images/inventory_app.png';
-import hackathonImg from '../images/hackathon.png';
-import backendImg from '../images/backend.png';
-import frontendImg from '../images/frontend.png';
-import deploymentImg from '../images/deployment.png';
+import inventoryImg from '../assets/inventory_app.png';
+import hackathonImg from '../assets/hackathon.png';
+import backendImg from '../assets/backend.png';
+import frontendImg from '../assets/frontend.png';
+import deploymentImg from '../assets/deployment.png';
 
 export default function Projects() {
   const projects = [

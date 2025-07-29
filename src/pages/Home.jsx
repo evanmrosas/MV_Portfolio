@@ -1,9 +1,9 @@
 import { Typography, Grid, Paper, Box } from '@mui/material';
 import AutoplayCarousel from '../components/AutoplayCarousel';
 
-import inventoryImg from '../images/inventory_app.png';
-import hackathonImg from '../images/hackathon.png';
-import backendImg from '../images/backend.png';
+import inventoryImg from '../assets/inventory_app.png';
+import hackathonImg from '../assets/hackathon.png';
+import backendImg from '../assets/backend.png';
 
 const featuredProjects = [
   {
