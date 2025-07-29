@@ -52,7 +52,7 @@ return (
             <Tooltip title="Go to Home">
                 <Avatar
                     alt="Portfolio Avatar"
-                    src='src/assets/headshot.jpg'
+                    src={headshot}
                     sx={{ cursor: 'pointer', width: 56, height: 56 }}
                 />
             </Tooltip>
@@ -138,7 +138,7 @@ return (
             sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
         >
             <img
-            src='src/assets/linkedin-logo.png'
+            src={linkedinLogo}
             alt="LinkedIn"
             style={{ width: 30, height: 30, marginRight: 8 }}
             />
@@ -153,7 +153,7 @@ return (
             sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
         >
             <img
-            src='src/assets/instagram-logo.png'
+            src={instagramLogo}
             alt="Instagram"
             style={{ width: 40, height: 30, marginRight: 8 }}
             />
@@ -168,7 +168,7 @@ return (
             sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
         >
             <img
-            src='src/assets/github-logo.png'
+            src={githubLogo}
             alt="GitHub"
             style={{ width: 30, height: 30, marginRight: 8 }}
             />
