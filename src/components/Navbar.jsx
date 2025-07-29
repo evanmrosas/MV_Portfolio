@@ -14,9 +14,9 @@ Typography
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-// import headshot from '../assets/headshot.jpg';
-// import linkedinLogo from '../assets/linkedin-logo.png';
-// import instagramLogo from '../assets/instagram-logo.png';
+import headshot from '../assets/head_shot.jpg';
+import linkedinLogo from '../assets/linkedin_logo.png';
+import instagramLogo from '../assets/instagram_logo.png';
 import githubLogo from '../assets/github_logo.png';
 
 
@@ -138,7 +138,7 @@ return (
             sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
         >
             <img
-            //src={linkedinLogo}
+            src={linkedinLogo}
             alt="LinkedIn"
             style={{ width: 30, height: 30, marginRight: 8 }}
             />
@@ -153,7 +153,7 @@ return (
             sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
         >
             <img
-            //src={instagramLogo}
+            src={instagramLogo}
             alt="Instagram"
             style={{ width: 40, height: 30, marginRight: 8 }}
             />
