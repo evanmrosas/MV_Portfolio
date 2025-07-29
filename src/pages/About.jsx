@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import headshot from '../assets/headshot.jpg';
+import headshot from '../../assets/headshot.jpg';
+
 
 export default function About() {
   return (
