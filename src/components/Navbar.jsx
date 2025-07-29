@@ -14,7 +14,7 @@ Typography
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
-import headshot from '../assets/headshot.JPG';
+import headshot from '../assets/headshot.jpg';
 import linkedinLogo from '../assets/linkedin-logo.png';
 import instagramLogo from '../assets/instagram-logo.png';
 import githubLogo from '../assets/github-logo.png';
