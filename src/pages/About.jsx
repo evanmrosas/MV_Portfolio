@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import headshot from '../assets/headshot.jpg';
+//import headshot from '../assets/headshot.jpg';
 
 export default function About() {
   return (
@@ -27,7 +27,7 @@ export default function About() {
       {/* Image and wrapping text */}
       <div style={{ overflow: 'hidden' }}>
         <img
-          src={headshot}
+          //src={headshot}
           alt="Evan Rosas"
           style={{
             width: '300px',
