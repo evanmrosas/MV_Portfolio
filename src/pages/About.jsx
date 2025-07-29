@@ -26,7 +26,7 @@ export default function About() {
       {/* Image and wrapping text */}
       <div style={{ overflow: 'hidden' }}>
         <img
-          src="src/images/headshot.JPG"
+          src="src/assets/headshot.JPG"
           alt="Evan Rosas"
           style={{
             width: '300px',
