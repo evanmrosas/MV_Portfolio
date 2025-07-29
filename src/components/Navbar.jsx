@@ -52,7 +52,7 @@ return (
             <Tooltip title="Go to Home">
                 <Avatar
                     alt="Portfolio Avatar"
-                    //src={headshot}
+                    src={headshot}
                     sx={{ cursor: 'pointer', width: 56, height: 56 }}
                 />
             </Tooltip>
