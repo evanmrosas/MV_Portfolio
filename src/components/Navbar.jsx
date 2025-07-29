@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 // import headshot from '../assets/headshot.jpg';
 // import linkedinLogo from '../assets/linkedin-logo.png';
 // import instagramLogo from '../assets/instagram-logo.png';
-// import githubLogo from '../assets/github-logo.png';
+import githubLogo from '../assets/github_logo.png';
 
 
 const pages = [
@@ -168,7 +168,7 @@ return (
             sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
         >
             <img
-            //src={githubLogo}
+            src={githubLogo}
             alt="GitHub"
             style={{ width: 30, height: 30, marginRight: 8 }}
             />
