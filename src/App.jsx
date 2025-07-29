@@ -6,22 +6,23 @@ import ProjectDetail from './pages/ProjectDetail';
 import Navbar from './components/Navbar';
 import { Container } from '@mui/material';
 import BottomAppBar from './components/Bottombar';
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import Footer from './components/Footer';
 
 
 export default function App() {
   return (
     <>
       <Container
-        maxWidth="lg" // ⬅️ Wider than "md"
+        maxWidth={false}
         sx={{
           mt: 5,
-          px: { xs: 3, sm: 5, md: 7, lg: 10, xl: 15 } // ⬅️ Slightly more padding
+          px: { xs: 4, sm: 6, md: 8 },
+          maxWidth: '1000px', // ⬅️ Custom width
+          mx: 'auto' // ⬅️ Centers it horizontally
         }}
       >
+
+
         <Navbar />
         <BottomAppBar />
         <Routes>
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/projects/:id" element={<ProjectDetail />} />
         </Routes>
       </Container>
+      <Footer />
     </>
   );
 }
