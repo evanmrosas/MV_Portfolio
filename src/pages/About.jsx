@@ -12,7 +12,6 @@ export default function About() {
         About Me
       </Typography>
 
-      {/* Who you are */}
       <Typography 
         paragraph
         variant="h6"
@@ -26,10 +25,11 @@ export default function About() {
 
       {/* Image and wrapping text */}
       <div style={{ overflow: 'hidden' }}>
-        <img
+        <Box
+          component="img"
           src={headshot}
           alt="Evan Rosas"
-          style={{
+          sx={{
             width: '300px',
             height: '400px',
             objectFit: 'cover',
@@ -40,7 +40,6 @@ export default function About() {
           }}
         />
 
-        {/* Company name, length of apprenticeship */}
         <Typography variant="h5" sx={{ mb: 1 }}>
           Apprenticeship at Verizon
         </Typography>
@@ -50,7 +49,6 @@ export default function About() {
           me with hands-on exposure to real-world engineering practices and workflows.
         </Typography>
 
-        {/* Why you do what you do */}
         <Typography variant="h5" sx={{ mb: 1 }}>
           Why I Do What I Do
         </Typography>
@@ -60,7 +58,6 @@ export default function About() {
           and take pride in creating software that is useful and meaningful.
         </Typography>
 
-        {/* Areas of interest */}
         <Typography variant="h5" sx={{ mb: 1 }}>
           Areas of Interest
         </Typography>
@@ -69,7 +66,6 @@ export default function About() {
           I enjoy working on both the front-end and back-end, with a growing interest in DevOps and CI/CD pipelines.
         </Typography>
 
-        {/* Teams you have worked on */}
         <Typography variant="h5" sx={{ mb: 1 }}>
           Teams I've Worked On
         </Typography>
@@ -79,7 +75,6 @@ export default function About() {
           managers in an Agile environment.
         </Typography>
 
-        {/* Impact you have had */}
         <Typography variant="h5" sx={{ mb: 1 }}>
           My Impact
         </Typography>
@@ -89,10 +84,10 @@ export default function About() {
           better than I found them — whether it’s refactoring code or simplifying user flows.
         </Typography>
 
-        {/* Closing */}
         <Typography paragraph fontSize={16} sx={{ color: '#555', mb: 3 }}>
           I’m excited to keep learning, keep building, and continue contributing to software that makes a difference.
         </Typography>
+
         <Typography variant="h4" gutterBottom sx={{ mt: 6 }}>
           Education & Certifications
         </Typography>
@@ -136,7 +131,6 @@ export default function About() {
             Coding Dojo Bootcamp (Awarded May 2024)
           </Typography>
         </Box>
-
       </div>
     </div>
   );
