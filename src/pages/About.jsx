@@ -125,6 +125,21 @@ export default function About() {
           <Typography variant="body2">GPA: 3.8</Typography>
         </Box>
 
+        <Box sx={{ mb: 3 }}>
+          <Typography variant="h6" sx={{ fontWeight: 500 }}>
+            Multiverse Software Engineering Apprenticeship
+          </Typography>
+          <Typography variant="body2" sx={{ color: '#555' }}>
+            Irving, Texas &nbsp;|&nbsp; 2024 – 2025
+          </Typography>
+          <Typography variant="body2" sx={{ mt: 1 }}>
+            12-month apprenticeship program focused on full-stack software development.
+          </Typography>
+          <Typography variant="body2">
+            Languages & Tools: React, Node.js, Express, MySQL, MongoDB, MUI, Docker, Render, GitHub
+          </Typography>
+        </Box>
+
         <Box>
           <Typography variant="h6" sx={{ fontWeight: 500 }}>
             Certifications
@@ -134,6 +149,12 @@ export default function About() {
           </Typography>
           <Typography variant="body2">
             Coding Dojo Bootcamp (Awarded May 2024)
+          </Typography>
+          <Typography variant="body2" sx={{ mt: 1 }}>
+            Certificate of Completion – Full-Stack Software Engineering
+          </Typography>
+          <Typography variant="body2">
+            Multiverse/Verizon (Awarded May 2024)
           </Typography>
         </Box>
 

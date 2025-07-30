@@ -1,5 +1,18 @@
-import { Typography, Box, Grid, Paper, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import {
+  Typography,
+  Box,
+  Grid,
+  Paper,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Modal,
+  Backdrop,
+  Fade
+} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import React, { useState } from 'react';
+
 import inventoryImg from '../assets/inventory_app.png';
 import hackathonImg from '../assets/hackathon.png';
 import backendImg from '../assets/backend.png';
@@ -7,6 +20,11 @@ import frontendImg from '../assets/frontend.png';
 import deploymentImg from '../assets/deployment.png';
 
 export default function Projects() {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
+
   const projects = [
     {
       title: 'Inventory App',
@@ -15,29 +33,30 @@ export default function Projects() {
       url: 'https://inventory-app-irving-99.onrender.com/',
       details: {
         purpose: 'Create a tool to track and manage inventory in real time.',
-        features: 'CRUD operations, search/filter, user authentication, responsive UI.',
-        skills: 'React, Node.js, Express, MongoDB, MUI, communication, problem-solving.',
-        application: 'Built full-stack features from database to UI. Focused on authentication and RESTful APIs.',
+        features: 'CRUD operations, search/filter, responsive UI.',
+        skills: 'React, Node.js, Express, MySQL, MUI, communication, problem-solving.',
+        application: 'Built full-stack features from database to UI. Focused on RESTful APIs.',
         takeaways: 'Learned to structure scalable projects and handle secure user data.',
-        contribution: 'Solo project: handled end-to-end development and deployment.',
-        link: 'https://inventory-app-irving-99.onrender.com/',
+        contribution: 'Working within a team I helped with creating a responsive UI and creating a clean interface. Along with connecting the front-end to the back-end API.',
+        reflection: 'Demonstrated full-stack development skills including backend API design and responsive UI. As a developer, Our team was able to bring this project lifecycle from database schema to frontend styling, showcasing both technical independence and holistic problem-solving.',
+        link: 'https://github.com/irving-99/inventory-app',
       },
     },
-    // You can add similar `details` fields for the other projects
     {
-      title: 'Bootcamp Hackathon',
+      title: 'Bootcamp Final',
       description: 'A rapid prototyping project built in 48 hours with a team.',
       image: hackathonImg,
-      url: 'https://your-hackathon-project.com',
       details: {
         purpose: 'Prototype an app under time constraints with teammates.',
         features: 'Real time site and weather data, clickable popups, filtering options.',
         skills: 'React, research, adaptability, GitLab flow.',
         application: 'Focused on UI build-out and connecting shared state.',
         takeaways: 'Learned rapid iteration and communication.',
-        contribution: 'Front-end lead in a 3-person team.',
-        link: 'https://your-hackathon-project.com',
+        contribution: 'As a solo developer, I was responsible for the entire front-end build, including the UI design and connecting to the back-end API.',
+        reflection: 'Highlighted collaboration in a time-sensitive environment. I led the frontend build, worked closely with teammates on state management, and ensured visual consistency. Emphasized rapid iteration and team adaptability under a tight deadline.',
+        link: 'Private – Cannot disclose.',
       },
+      isConfidential: true,
     },
     {
       title: 'Backend Module Project',
@@ -46,12 +65,13 @@ export default function Projects() {
       url: 'https://create-event-app.netlify.app/',
       details: {
         purpose: 'Build a back-end API to support front-end requests.',
-        features: 'CRUD routes, MySQL schema, testing endpoints.',
-        skills: 'Node.js, Spring boot, MySQL, Postman, documentation.',
+        features: 'CRUD routes, MySQL schema, testing endpoints, Oauth.',
+        skills: 'Node.js, Spring boot, MySQL, Postman, documentation, authentication.',
         application: 'Designed and implemented RESTful routes.',
         takeaways: 'Gained confidence in API design and server logic.',
-        contribution: 'Solo backend development with deployable routes.',
-        link: 'https://create-event-app.netlify.app/',
+        contribution: 'As a part of a team I was responsible for setting up the model and routes for the back-end API, along with creating the database schema.',
+        reflection: 'Showcased backend API design skills, including route structuring and database integration. I contributed to the team by setting up the model and routes, ensuring a solid foundation for the front-end to interact with.',
+        link: 'https://github.com/Evan-Mahdi/Back-End-Project-Repo',
       },
     },
     {
@@ -60,12 +80,13 @@ export default function Projects() {
       image: frontendImg,
       url: 'https://github.com/AdrianBurke1/Front-End-Project',
       details: {
-        purpose: 'Design a frontend UI for an existing backend API.',
+        purpose: 'Design a frontend UI for a web application.',
         features: 'Routing, dynamic views, responsive layouts.',
-        skills: 'React, React Router, MUI, GitHub collaboration.',
+        skills: 'React, React Router, MUI, GitHub collaboration, implementation of external APIs.',
         application: 'Created React components and responsive design.',
         takeaways: 'Learned component reusability and better state handling.',
-        contribution: 'Solo frontend project with full layout build.',
+        contribution: 'As a part of a team I was responsible for creating the front-end UI, including the routing and dynamic views and utilizing external APIs.',
+        reflection: 'Demonstrated frontend development skills, focusing on responsive design and component architecture. I contributed to the team by implementing routing and dynamic views, ensuring a seamless user experience.',
         link: 'https://github.com/AdrianBurke1/Front-End-Project',
       },
     },
@@ -80,8 +101,9 @@ export default function Projects() {
         skills: 'Docker, Render, deployment strategy, CI/CD basics.',
         application: 'Packaged and deployed apps with environment configs.',
         takeaways: 'Learned real-world deployment flow and debugging tools.',
-        contribution: 'Deployed solo project using Docker and GitHub Actions.',
-        link: 'https://class-management-frontend.onrender.com/',
+        contribution: 'As a part of a team I was responsible for setting up the front-end UI and helping connect it to the back-end API.',
+        reflection: 'Showcased deployment skills, including Docker configuration and Render setup. I contributed to the team by setting up the front-end UI and ensuring it was properly connected to the back-end API, demonstrating an understanding of real-world deployment practices.',
+        link: 'https://github.com/E-DISTRICT/Class-Management',
       },
     },
   ];
@@ -98,59 +120,142 @@ export default function Projects() {
       <Grid container spacing={4} justifyContent="center">
         {projects.map((project) => (
           <Grid item xs={12} md={10} lg={8} key={project.title}>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: 'none' }}
-            >
-              <Paper
-                sx={{
-                  position: 'relative',
-                  height: 350,
-                  width: '700px',
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                  boxShadow: 4,
-                  transition: 'transform 0.3s',
-                  mx: 'auto',
-                  '&:hover': {
-                    transform: 'scale(1.01)',
-                  },
-                }}
-              >
-                <Box
-                  component="img"
-                  src={project.image}
-                  alt={project.title}
+            {project.isConfidential ? (
+              <>
+                <Paper
+                  onClick={handleOpen}
                   sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                  }}
-                />
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    bottom: 0,
-                    width: '100%',
-                    p: 2,
-                    background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1))',
-                    color: '#fff',
+                    position: 'relative',
+                    height: 350,
+                    width: '700px',
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    boxShadow: 4,
+                    transition: 'transform 0.3s',
+                    mx: 'auto',
+                    '&:hover': {
+                      transform: 'scale(1.01)',
+                    },
                   }}
                 >
-                  <Typography variant="h6" fontWeight={600}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2">{project.description}</Typography>
-                </Box>
-              </Paper>
-            </a>
+                  <Box
+                    component="img"
+                    src={project.image}
+                    alt={project.title}
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      width: '100%',
+                      p: 2,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1))',
+                      color: '#fff',
+                    }}
+                  >
+                    <Typography variant="h6" fontWeight={600}>
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body2">{project.description}</Typography>
+                  </Box>
+                </Paper>
+
+                <Modal
+                  open={openModal}
+                  onClose={handleClose}
+                  closeAfterTransition
+                  BackdropComponent={Backdrop}
+                  BackdropProps={{ timeout: 500 }}
+                >
+                  <Fade in={openModal}>
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        bgcolor: 'background.paper',
+                        borderRadius: 2,
+                        boxShadow: 24,
+                        p: 4,
+                        width: '90%',
+                        maxWidth: 500,
+                        textAlign: 'center',
+                      }}
+                    >
+                      <Typography variant="h6" gutterBottom>
+                        Bootcamp Final Project
+                      </Typography>
+                      <Typography variant="body2">
+                        This project was built as part of a Verizon-sponsored hackathon. Due to internal confidentiality
+                        policies, I’m unable to share source code or detailed implementation information.
+                      </Typography>
+                    </Box>
+                  </Fade>
+                </Modal>
+              </>
+            ) : (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: 'none' }}
+              >
+                <Paper
+                  sx={{
+                    position: 'relative',
+                    height: 350,
+                    width: '700px',
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    boxShadow: 4,
+                    transition: 'transform 0.3s',
+                    mx: 'auto',
+                    '&:hover': {
+                      transform: 'scale(1.01)',
+                    },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={project.image}
+                    alt={project.title}
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block',
+                    }}
+                  />
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      bottom: 0,
+                      width: '100%',
+                      p: 2,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1))',
+                      color: '#fff',
+                    }}
+                  >
+                    <Typography variant="h6" fontWeight={600}>
+                      {project.title}
+                    </Typography>
+                    <Typography variant="body2">{project.description}</Typography>
+                  </Box>
+                </Paper>
+              </a>
+            )}
 
             {/* Accordion for project details */}
-            <Accordion sx={{ mt: 2 }}>
+            <Accordion sx={{ mt: 2, width: '700px', mx: 'auto' }}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography variant="subtitle1">More About This Project</Typography>
               </AccordionSummary>
@@ -161,7 +266,13 @@ export default function Projects() {
                       {label}
                     </Typography>
                     <Typography variant="body2" sx={{ color: '#444' }}>
-                      {content}
+                      {label === 'link' && typeof content === 'string' && content.startsWith('http') ? (
+                        <a href={content} target="_blank" rel="noopener noreferrer">
+                          {content}
+                        </a>
+                      ) : (
+                        content
+                      )}
                     </Typography>
                   </Box>
                 ))}
