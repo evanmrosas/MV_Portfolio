@@ -19,13 +19,6 @@ import linkedinLogo from '../assets/linkedin_logo.png';
 import instagramLogo from '../assets/instagram_logo.png';
 import githubLogo from '../assets/github_logo.png';
 
-
-const pages = [
-{ label: 'Home', path: '/' },
-{ label: 'About', path: '/about' },
-{ label: 'Projects', path: '/projects' }
-];
-
 function ResponsiveAppBar() {
 const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -41,56 +34,44 @@ return (
 <AppBar
     position="static"
     elevation={0}
-    sx={{ backgroundColor: '#fff', color: '#000', mb: 12 }} // White bg, black text
+    sx={{ backgroundColor: '#fff', color: '#000', mb: 4 }}
 >
     <Container maxWidth="xl">
     <Toolbar disableGutters>
 
-        {/* Avatar that links to home */}
-        <Link to="/" style={{ display: 'inline-block', textDecoration: 'none', color: 'inherit' }}>
-            <Box sx={{ flexGrow: 0, mr: 2, display: { xs: 'none', md: 'flex', alignItems: 'center'} }}>
+        {/* Avatar and Name */}
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}>
             <Tooltip title="Go to Home">
-                <Avatar
-                    alt="Portfolio Avatar"
-                    src={headshot}
-                    sx={{ cursor: 'pointer', width: 56, height: 56 }}
-                />
+            <Avatar
+                alt="Portfolio Avatar"
+                src={headshot}
+                sx={{ width: 48, height: 48, cursor: 'pointer' }}
+            />
             </Tooltip>
-            <Box>
-                <Typography
-                    variant="h6"
-                    noWrap
-                    component="div"
-                    sx={{
-                        flexGrow: 1,
-                        display: { xs: 'none', md: 'flex' },
-                        fontWeight: 700,
-                        color: '#000',
-                        textDecoration: 'none',
-                        ml: 2
-                    }}
-                >
-                    Evan Rosas
-                </Typography>
-            </Box>
-            </Box>
+            <Typography
+            variant="h6"
+            noWrap
+            sx={{
+                ml: 1,
+                display: { xs: 'none', sm: 'block' },
+                fontWeight: 700,
+                color: '#000',
+            }}
+            >
+            Evan Rosas
+            </Typography>
+        </Box>
         </Link>
-        {/* Menu icon for mobile view */}
-        <Box
-        sx={{
-            flexGrow: 1,
-            display: { xs: 'flex', md: 'none' },
-            justifyContent: 'flex-end',
-            ml: 2
-        }}
-        >
+
+        {/* Mobile Menu Icon */}
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, justifyContent: 'flex-end' }}>
         <IconButton
             size="large"
-            aria-label="menu"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
             onClick={handleOpenNavMenu}
-            sx={{ color: '#000' }} // Black icon
+            color="inherit"
+            aria-label="menu"
+            sx={{ color: '#000' }}
         >
             <MenuIcon />
         </IconButton>
@@ -98,83 +79,75 @@ return (
         <Menu
             id="menu-appbar"
             anchorEl={anchorElNav}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
             keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{ display: { xs: 'block', md: 'none' } }}
         >
-            {pages.map((page) => (
-            <MenuItem
-                key={page.label}
-                onClick={handleCloseNavMenu}
-                component={Link}
-                to={page.path}
+            <MenuItem>
+            <Button
+                href="https://www.linkedin.com/in/evan-rosas-aa75892b6/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: '#000' }}
             >
-                <Typography textAlign="center" sx={{ color: '#000' }}>
-                {page.label}
-                </Typography>
+                <img src={linkedinLogo} alt="LinkedIn" width={24} style={{ marginRight: 8 }} />
+                LinkedIn
+            </Button>
             </MenuItem>
-            ))}
+            <MenuItem>
+            <Button
+                href="https://www.instagram.com/evan_rosas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: '#000' }}
+            >
+                <img src={instagramLogo} alt="Instagram" width={24} style={{ marginRight: 8 }} />
+                Instagram
+            </Button>
+            </MenuItem>
+            <MenuItem>
+            <Button
+                href="https://github.com/evanmrosas"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: '#000' }}
+            >
+                <img src={githubLogo} alt="GitHub" width={24} style={{ marginRight: 8 }} />
+                GitHub
+            </Button>
+            </MenuItem>
         </Menu>
         </Box>
 
-        {/* Navigation buttons for desktop */}
-        <Box
-        sx={{
-            flexGrow: 1,
-            display: { xs: 'none', md: 'flex' },
-            justifyContent: 'flex-end'
-        }}
-        >
-        <>
+        {/* Desktop Social Icons */}
+        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
         <Button
-            key="LinkedIn"
             href="https://www.linkedin.com/in/evan-rosas-aa75892b6/"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
+            sx={{ mx: 0.5 }}
         >
-            <img
-            src={linkedinLogo}
-            alt="LinkedIn"
-            style={{ width: 30, height: 30, marginRight: 8 }}
-            />
+            <img src={linkedinLogo} alt="LinkedIn" width={28} />
         </Button>
-
         <Button
-            key="Instagram"
             href="https://www.instagram.com/evan_rosas/"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
+            sx={{ mx: 0.5 }}
         >
-            <img
-            src={instagramLogo}
-            alt="Instagram"
-            style={{ width: 40, height: 30, marginRight: 8 }}
-            />
+            <img src={instagramLogo} alt="Instagram" width={34} />
         </Button>
-
         <Button
-            key="GitHub"
             href="https://github.com/evanmrosas"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={handleCloseNavMenu}
-            sx={{ my: 2, color: '#000', display: 'flex', alignItems: 'center' }}
+            sx={{ mx: 0.5 }}
         >
-            <img
-            src={githubLogo}
-            alt="GitHub"
-            style={{ width: 30, height: 30, marginRight: 8 }}
-            />
+            <img src={githubLogo} alt="GitHub" width={28} />
         </Button>
-        </>
-
         </Box>
     </Toolbar>
     </Container>

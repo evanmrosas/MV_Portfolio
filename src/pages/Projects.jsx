@@ -119,15 +119,15 @@ export default function Projects() {
 
       <Grid container spacing={4} justifyContent="center">
         {projects.map((project) => (
-          <Grid item xs={12} md={10} lg={8} key={project.title}>
+          <Grid item xs={12} md={10} key={project.title}>
             {project.isConfidential ? (
               <>
                 <Paper
                   onClick={handleOpen}
                   sx={{
                     position: 'relative',
-                    height: 350,
-                    width: '700px',
+                    height: { xs: 250, sm: 300, md: 350 },
+                    width: { xs: '100%', sm: '90%', md: '80%', lg: '700px' },
                     borderRadius: 2,
                     overflow: 'hidden',
                     cursor: 'pointer',
@@ -185,8 +185,7 @@ export default function Projects() {
                         borderRadius: 2,
                         boxShadow: 24,
                         p: 4,
-                        width: '90%',
-                        maxWidth: 500,
+                        width: { xs: '90%', sm: '80%', md: 500 },
                         textAlign: 'center',
                       }}
                     >
@@ -211,8 +210,8 @@ export default function Projects() {
                 <Paper
                   sx={{
                     position: 'relative',
-                    height: 350,
-                    width: '700px',
+                    height: { xs: 250, sm: 300, md: 350 },
+                    width: { xs: '100%', sm: '90%', md: '80%', lg: '700px' },
                     borderRadius: 2,
                     overflow: 'hidden',
                     cursor: 'pointer',
@@ -254,8 +253,7 @@ export default function Projects() {
               </a>
             )}
 
-            {/* Accordion for project details */}
-            <Accordion sx={{ mt: 2, width: '700px', mx: 'auto' }}>
+            <Accordion sx={{ mt: 2, width: { xs: '100%', sm: '90%', md: '80%', lg: '700px' }, mx: 'auto' }}>
               <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                 <Typography variant="subtitle1">More About This Project</Typography>
               </AccordionSummary>
