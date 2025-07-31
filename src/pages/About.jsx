@@ -154,7 +154,7 @@ export default function About() {
             Certificate of Completion – Full-Stack Software Engineering
           </Typography>
           <Typography variant="body2">
-            Multiverse/Verizon (Awarded May 2024)
+            Multiverse/Verizon (Awarded August 2025)
           </Typography>
         </Box>
 
